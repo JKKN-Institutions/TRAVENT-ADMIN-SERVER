@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const connectDB = require("../config/db");
+const connectDB = require("./config/db");
 require("dotenv").config();
 const admin = require("firebase-admin");
 
@@ -16,7 +16,7 @@ const PORT = 3000;
 connectDB();
 
 // Initialize Firebase Admin SDK for any Google-related services
-const serviceAccount = require("../firebase-adminsdk.json");
+const serviceAccount = require("./firebase-adminsdk.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -36,13 +36,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Import and use routes
-const authRoutes = require("../routes/authRoutes");
-const institutionRoutes = require("../routes/institutionRoutes");
-const adminRoutes = require("../routes/adminRoutes");
-const studentRoutes = require("../routes/studentRoutes");
-const busRoutes = require("../routes/busRoutes");
-const institutions = require("../routes/institutionRoutes");
-const registrationForm = require("../routes/registrationRoutes");
+const authRoutes = require("./routes/authRoutes");
+const institutionRoutes = require("./routes/institutionRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+const studentRoutes = require("./routes/studentRoutes");
+const busRoutes = require("./routes/busRoutes");
+const institutions = require("./routes/institutionRoutes");
+const registrationForm = require("./routes/registrationRoutes");
 // Define routes
 app.use("/api/auth", authRoutes);
 app.use("/api", institutionRoutes);
