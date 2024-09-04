@@ -10,7 +10,7 @@ const admin = require("firebase-admin");
 const app = express();
 
 // Load environment variables from .env file
-const PORT = process.env.PORT || 3001;
+const PORT = 3000;
 
 // Connect to MongoDB
 connectDB();

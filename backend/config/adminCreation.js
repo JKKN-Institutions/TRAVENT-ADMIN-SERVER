@@ -7,7 +7,7 @@ const Admin = require('../models/Admin'); // Adjust the path according to your p
 
 dotenv.config(); // Load environment variables
 
-console.log('MONGO_URI:', process.env.MONGO_URI);
+console.log('MONGO_URI:', "mongodb+srv://venkatagirirajuearth:oM9jGMM8yA0QN9HM@travent-1.use8ocf.mongodb.net/?retryWrites=true&w=majority&appName=Travent-1");
 
 const createAdmin = async () => {
     try {
